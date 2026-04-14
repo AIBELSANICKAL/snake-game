@@ -15,4 +15,6 @@ A sleek, premium, web-based version of the classic Snake game. It features dynam
 4. **Goal**: Eat the glowing pink food to increase your score and grow longer.
 5. **Rules**: Do NOT hit the walls or your own tail, or it's Game Over!
 
+https://aibelsanickal.github.io/snake-game/
+
 Enjoy!
