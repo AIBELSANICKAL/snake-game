@@ -11,26 +11,81 @@
     <div class="game-container">
         <header>
             <div class="title">NEON SNAKE</div>
-            <div class="score-container">
-                <div class="score-label">SCORE</div>
-                <div id="score" class="score-value">0</div>
+            <div class="header-stats">
+                <div class="score-container">
+                    <div class="score-label">SCORE</div>
+                    <div id="score" class="score-value">0</div>
+                </div>
+                <div class="score-container">
+                    <div class="score-label">MAP</div>
+                    <div id="currentMapDisplay" class="score-value" style="color:var(--accent-color);">1 (Zen)</div>
+                </div>
             </div>
         </header>
 
         <div class="canvas-wrapper">
-            <canvas id="gameCanvas" width="400" height="400"></canvas>
+            <canvas id="gameCanvas" width="500" height="500"></canvas>
             
+            <!-- Main Menu Overlay -->
+            <div id="mainMenuScreen" class="overlay">
+                <div id="mainMenuContent" class="menu-content">
+                    <h2>MAIN MENU</h2>
+                    <div class="btn-group">
+                        <button id="btnNewGame">NEW GAME</button>
+                        <button id="btnLoadGame">LOAD GAME</button>
+                        <button id="btnSelectMap">SELECT MAP</button>
+                        <button id="btnHighscores">HIGHSCORES</button>
+                    </div>
+                </div>
+
+                <div id="mapSelectContent" class="menu-content hidden">
+                    <h2>SELECT MAP</h2>
+                    <div class="map-options">
+                        <button class="map-btn active" data-map="1">Map 1 (Zen)</button>
+                        <button class="map-btn" data-map="2">Map 2 (Classic)</button>
+                        <button class="map-btn" data-map="3">Map 3 (Blocks)</button>
+                        <button class="map-btn" data-map="4">Map 4 (Rows)</button>
+                        <button class="map-btn" data-map="5">Map 5 (Boxed)</button>
+                    </div>
+                    <button class="btnBackToMain">BACK</button>
+                </div>
+
+                <div id="highscoreContent" class="menu-content hidden">
+                    <h2>HIGHSCORES</h2>
+                    <div id="highscoresList" class="highscores-list">
+                        <!-- Highscores dynamically generated -->
+                    </div>
+                    <button class="btnBackToMain">BACK</button>
+                </div>
+            </div>
+
+            <!-- Pause Screen Overlay -->
+            <div id="pauseScreen" class="overlay hidden">
+                <div class="menu-content">
+                    <h2>PAUSED</h2>
+                    <div class="btn-group">
+                        <button id="btnResume">RESUME</button>
+                        <button id="btnSaveGame">SAVE GAME</button>
+                        <button id="btnQuitToMenu">QUIT TO MENU</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Game Over Overlay -->
             <div id="gameOverScreen" class="overlay hidden">
                 <div class="game-over-content">
                     <h2>GAME OVER</h2>
                     <p>Final Score: <span id="finalScore">0</span></p>
-                    <button id="restartBtn">PLAY AGAIN</button>
+                    <div class="btn-group" style="flex-direction:row; gap:10px; justify-content:center;">
+                        <button id="restartBtn">PLAY AGAIN</button>
+                        <button id="btnGameOverToMenu">MAIN MENU</button>
+                    </div>
                 </div>
             </div>
         </div>
 
         <div class="controls-hint">
-            Use <b>Arrow Keys</b> to move
+            Use <b>Arrow Keys</b> to move | <b>P</b> or <b>Esc</b> to Pause
         </div>
     </div>
     
